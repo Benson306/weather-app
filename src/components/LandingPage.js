@@ -4,7 +4,8 @@ import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 export default function LandingPage({ navigation }) {
   return (
     <View style={styles.container}>
-        <Image source={require('../assets/cloudy.png')} />
+        <View style={{marginTop:100}}></View>
+        <Image source={require('../../assets/cloudy.png')} />
         <Text style={styles.landingText}>Discover the Weather in Your City</Text>
         <Text style={styles.landingDesc}>Get to know your Weather maps  and radar precipitation forecast</Text>
         <TouchableOpacity style={styles.button} onPress={()=> navigation.navigate('Home')}>
@@ -42,7 +43,7 @@ const styles = StyleSheet.create({
         backgroundColor:'#3399ff',
         padding: 18,
         width:280,
-        marginTop:60,
+        marginTop:90,
         borderRadius:15
     },
     buttonText:{
