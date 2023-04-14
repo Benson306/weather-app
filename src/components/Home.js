@@ -19,8 +19,6 @@ export default function Home() {
     .then(res => res.json())
     .then(res =>{
       setData(res)
-      setLoading(false)
-      console.log(res)
     })
 
     fetch('https://api.weatherapi.com/v1/forecast.json?key=b0fa03de6eea43e497080000231304&q=Nairobi&days=1&aqi=no&alerts=no')
@@ -28,7 +26,6 @@ export default function Home() {
     .then(res =>{
       setHourly(res)
       setLoading(false)
-      console.log(res)
     })
 
   },[])
@@ -101,7 +98,7 @@ export default function Home() {
                 {
                   if(Number(hr.time.slice(11,13)) > Number(data.location.localtime.slice(11,13))){
                     return (
-                      <View style={{backgroundColor:'#80ccff', height:150, elevation:3, shadowOffset:{width:1, height:1}, shadowColor:'#00b8e6', shadowRadius:2, shadowOpacity:0.3, padding:10, borderRadius:15, marginHorizontal:5, width: 120, alignItems:'center'}}>
+                      <View style={{backgroundColor:'#8c8cd9', height:150, elevation:3, shadowOffset:{width:1, height:1}, shadowColor:'#00b8e6', shadowRadius:2, shadowOpacity:0.3, padding:10, borderRadius:15, marginHorizontal:5, width: 120, alignItems:'center'}}>
                         <Text style={{fontSize:16}}>{hr.time.slice(11,16)}</Text>
                         <Image source={{ uri: `https:${hr.condition.icon}`}} style={{width: 80, height: 80, objectFit:'scale-down'}}/>
                         <Text style={{fontSize:10, textTransform:'capitalize', color:'#030c3b'}}>{hr.condition.text}</Text>
